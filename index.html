@@ -36,9 +36,9 @@
         <p>Вёрстка сайта на HTML и CSS <br>Разработка сайта под ключ</p>
      </div>
      </div> 
-      <a href="#" class="main-down"><i class="icon-down"></i></a>
+      <a href="#portfolio" class="main-down slowly"><i class="icon-down"></i></a>
     </div>
-    <div class="portfolio">
+    <div class="portfolio" id="portfolio">
       <div class="container">
         <h2 class="section-header">Портфолио</h2>
         <div class="row">
@@ -117,5 +117,16 @@
         });
       });
     </script>
+    <script>
+  $(document).ready(function(){
+   
+    $(".slowly").on("click", function(event){
+        event.preventdefault();
+        var id =$(this).attr('href')
+        top=$(id).offset().top;
+        $('body,html').animate({scrolltop:top}, 800);
+    });
+});
+</script>
   </body>
 </html>
